@@ -1,3 +1,20 @@
-table{
-    font-size: 1,7em;
+.carrito{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.resumenCarrito{
+    width: 60%;
+}
+
+.infoPago{
+    width: 25%;
+    border: green 2px solid;
+    padding: 15px;
+    border-radius: 5%;
+}
+
+.resumenCarrito button{
+    text-decoration: none;
 }

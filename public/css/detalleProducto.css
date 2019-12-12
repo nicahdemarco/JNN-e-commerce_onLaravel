@@ -1,0 +1,126 @@
+
+.detalle-container {
+    display: flex;
+    margin-bottom: 2%;
+}
+
+.detalle-producto {
+    display: flex;
+    flex-direction: row;
+    margin: 2%;
+    justify-content: space-between;
+    /* height: 60vh; */
+
+}
+.detalle-imagen {
+    background-image: url("../images/catalogo/IMG_12.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    align-items: center;
+    background-color: white;
+    border-radius: 10px;
+    margin-right:2%;
+}
+
+.detalle-descripcion {
+    align-items: center;
+    background: white;
+    border-radius: 10px;
+    padding: 2%;
+}
+.botones{
+    justify-content: space-between;
+    margin: 1%;
+    align-items: flex-end;
+}
+.btn-primary {
+    background-color: #FFA000;
+    -webkit-box-shadow: 0px 9px 10px -10px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0px 9px 10px -10px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 9px 10px -10px rgba(0, 0, 0, 0.5);
+    width: 200px;
+    border: transparent;
+}
+
+.form-check-input{
+    height: 30px;
+    width: 30px;
+}
+
+#inlineCheckbox3{
+    background-color: rgb(129, 33, 33);
+    color: rgb(202, 26, 26);
+
+}
+.qty .count {
+    color: #212121;
+    display: inline-block;
+    vertical-align: top;
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 30px;
+    padding: 0 2px;
+    min-width: 35px;
+    text-align: center;
+}
+
+.qty .plus {
+    background-color: #FFA000;
+    -webkit-box-shadow: 0px 9px 10px -10px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0px 9px 10px -10px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 9px 10px -10px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: top;
+    color: white;
+    width: 30px;
+    height: 30px;
+    font: 30px/1 Arial, sans-serif;
+    text-align: center;
+    border-radius: 50%;
+}
+
+.qty .minus {
+    background-color: #FFA000;
+    -webkit-box-shadow: 0px 9px 10px -10px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0px 9px 10px -10px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 9px 10px -10px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: top;
+    color: white;
+    width: 30px;
+    height: 30px;
+    font: 30px/1 Arial, sans-serif;
+    text-align: center;
+    border-radius: 50%;
+    background-clip: padding-box;
+}
+
+.minus:hover,
+.plus:hover,
+.btn-primary:hover {
+    background-color: #757575 !important;
+}
+
+/*Prevent text selection*/
+.signos {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.signo {
+    border: 0;
+    width: 2%;
+}
+
+.signo::-webkit-outer-spin-button,
+.signo::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+.signo:disabled {
+    background-color: white;
+}

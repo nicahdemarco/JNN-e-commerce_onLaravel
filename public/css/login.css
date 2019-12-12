@@ -1,11 +1,32 @@
-#login-container {
-    background-image: url('../images/backgrounds/login-bg01.jpg');
-    background-size: cover;
+
+body {
+  font-family: 'Lato', sans-serif;
+  color: #212121;
+  background: rgb(255, 255, 255);
+  background: linear-gradient(45deg, rgba(255, 255, 255, 1) 0%, rgba(158, 158, 158, 0.5494791666666667) 59%, rgba(189, 189, 189, 0.2525603991596639) 87%);
 }
 
-.title {
-    text-transform: uppercase;
-    text-shadow: 1px 1px 3px rgb(51, 54, 255);
-    color:#fff;
+.container-fluid {
+  padding-left: 0px;
+  padding-right: 0px;
 }
 
+fieldset {
+  border: 1px solid lightgray;
+  margin: 10px 0;
+  padding: 15px;
+}
+
+input {
+  margin-top: 4px;
+  margin-bottom: 10px;
+}
+
+textarea {
+  margin-top: 4px;
+  height:80px;
+}
+
+button {
+  padding:8px 12px;
+}

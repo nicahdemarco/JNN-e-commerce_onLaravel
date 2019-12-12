@@ -1,0 +1,28 @@
+
+.contenedor_error {
+    height: 100vh;
+    background-image: url(../images/404.png);
+    background-size: cover;
+    background-color: #FFE0B2;
+    margin: 0 auto;
+    padding: 0;
+    font-family: 'Lato', sans-serif;
+    color: #212121;
+}
+
+.error404 {
+    display: flex;
+    height: 90vh;
+    align-items: center;
+
+}
+
+.texto{
+    margin: 10%;
+    padding: 3%;
+    background-color:rgba(245, 123, 0, 0.75);
+}
+
+a{
+    text-decoration: none;
+}

@@ -1,0 +1,18 @@
+@import "../CSS/index.css";
+@import "../CSS/navbar.css";
+@import "../CSS/detalleProducto.css";
+@import "../CSS/productos.css";
+@import "../CSS/faq.css";
+@import "../CSS/footer.css";
+@import "../CSS/404.css";
+@import "../CSS/carrito.css";
+
+
+
+*{
+    box-sizing: border-box;
+    padding:0;
+    margin:0;
+    font-family: 'Lato', sans-serif;
+    color: #212121;
+}
