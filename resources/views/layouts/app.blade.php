@@ -17,7 +17,7 @@
     @yield('assets')
 </head>
 <body>
-    <div id='top-navbar-main' class='container-fluid p-0'>
+    {{-- <div id='top-navbar-main' class='container-fluid p-0'> --}}
         {{-- <nav class="navbar navbar-expand-md">
             <section class="container-fluid">
                 <a class="navbar-brand" href="{{ url('/') }}">
@@ -88,39 +88,39 @@
                 </article>
             </section>
         </nav> --}}
-        <nav class="navbar navbar-expand-lg w-100">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarToggler">
-        <a class="navbar-brand" href="index.php">
-            <img src="images/tshirt.png" width="40" height="40" alt="logo">
-        </a>
-
-        <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="Buscar" aria-label="buscar" aria-describedby="basic-addon2">
-        </div>
-
-        <button type="button" class="btn btn-info btn_nav" data-toggle="modal" data-target="#registro">
-            <a href="registro.php">Crear cuenta</a>
+    <nav class="navbar navbar-expand-lg w-100">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
         </button>
 
-        <button type="button" class="btn btn-info btn_nav" data-toggle="modal" data-target="#cuenta">
-            <a href="login.php">Ingresar</a>
-        </button>
+        <div class="collapse navbar-collapse" id="navbarToggler">
+            <a class="navbar-brand" href="index.php">
+                <img src="images/tshirt.png" width="40" height="40" alt="logo">
+            </a>
 
-    
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Buscar" aria-label="buscar" aria-describedby="basic-addon2">
+            </div>
+
+            <button type="button" class="btn btn-info btn_nav" data-toggle="modal" data-target="#registro">
+                <a href="registro.php">Crear cuenta</a>
+            </button>
+
+            <button type="button" class="btn btn-info btn_nav" data-toggle="modal" data-target="#cuenta">
+                <a href="login.php">Ingresar</a>
+            </button>
+
         
-        <a class="carrito-de-compras" href="carrito.php">
-            <img src="images/tcart.png" width="40" height="40" data-toggle="tooltip" data-placement="top" title="Carrito de compras" alt="carrito de compras">
-            (<?php echo (empty($_SESSION['CARRITO']))?0:count($_SESSION['CARRITO']);?>) 
-        </a>
-    </div>
-</nav>
-    </div>
+            
+            <a class="carrito-de-compras" href="carrito.php">
+                <img src="images/tcart.png" width="40" height="40" data-toggle="tooltip" data-placement="top" title="Carrito de compras" alt="carrito de compras">
+                (<?php echo (empty($_SESSION['CARRITO']))?0:count($_SESSION['CARRITO']);?>) 
+            </a>
+        </div>
+    </nav>
+    {{-- </div> --}}
 
-    <header id="main-header" class="main-header">
+    {{-- <header id="main-header" class="main-header">
 
         <div class='container-fluid title-background'>
             <!-- titulo -->
@@ -143,15 +143,15 @@
             <a href="{{route('men')}}">Caballeros</a>
             <a href="{{route('kids')}}">Niños</a>
             <a href="{{route('faqs')}}">Preguntas frecuentes</a>
-        </nav>
+        </nav> 
 
-    </header>
+    </header> --}}
 
 
     @yield('content')
 
 
-    <div class='container-fluid p-0'>
+    {{-- <div class='container-fluid p-0'>
         <footer class="main-footer">
             <nav>
                 <article class="column-1 footer-article">
@@ -186,7 +186,69 @@
                 <a href="#main-header"><i class="fas fa-angle-double-up"></i></a>
             </section>
         </footer>
-    </div>
+    </div> --}}
+
+    <footer class="col-md-12 main-footer row">
+		<div>
+			<ul class="col-md-12 redeslist lista">
+				<li><h5>REDES SOCIALES</h5></li>
+
+				<li><hr class="accent-2 mt-0 d-inline-block mx-auto" style="width: 60px;"></li>
+
+				<span><a href=""><i class="fab fa-facebook-f white-text mr-1 fa-2x"></i></a></span>
+				<span><a href=""><i class="fab fa-twitter white-text mr-1 fa-2x"> </i></a></span>
+				<span><a href=""><i class="fab fa-instagram white-text mr-1 fa-2x"> </i></a></span>
+			</ul>
+		</div>
+
+		<div>
+			<ul class="col-md-12 lista">
+				<li><h5>METODOS DE PAGO</h5></li>
+
+				<li><hr class="accent-2 mt-0 d-inline-block mx-auto" style="width: 60px;"></li>
+
+				<span><a href="#" target="_blank"><img src="images/Visa_Logo.png" class="mr-1 logos" width="40px"></i></a></span>
+				<span><a href="#" target="_blank"><img src="images/mastercard.png" class="mr-1" width="40px"></a></span>
+				<span><a href="#" target="_blank"><img src="images/pagofacil.png" class="mr-1" width="40px"></a></span>
+				<span><a href="#" target="_blank"><img src="images/paypal.png" class="mr-1" width="40px"></a></span>
+			</ul>
+		</div>
+
+		<div>
+			<ul class="col-md-12 lista">
+				<li><h5>ENVIOS</h5></li>
+				<li><hr class="accent-2 mt-0 d-inline-block mx-auto" style="width: 60px;"></li>
+
+				<span><a href="#" target="_blank"><img src="images/oca.png" class="mr-1 logos" width="40px"></a></span>
+				<span><a href="#" target="_blank"><img src="images/logo-mercadoenvios.png" class="mr-1 logos" width="40px"></a></span>
+				<span><a href="#" target="_blank"><img src="images/correoarg.png" class="mr-1 logos" width="40px"></a></span>
+			</ul>
+		</div>
+
+		<div>
+			<ul class="col-md-12 lista">
+				<li><h5>CONTACTO</h5></li>
+
+				<hr class="accent-2 mt-0 d-inline-block mx-auto" style="width: 60px;">
+				<li class="contactlist_item"><a href="FAQ.php" target=""><i class="fas fa-question"></i>Preguntas frecuentes</a></li>
+				<li class="contactlist_item"><a href="mailto:consultas@jnn.com.ar" target="_blank"><i class="fas fa-envelope"></i>consultas@jnn.com.ar</a></li>
+				<li class="contactlist_item"><a href="https://www.google.com.ar/maps/place/Av.+Monroe+860,+Buenos+Aires/@-34.5488518,-58.4458325,17z/data=!3m1!4b1!4m5!3m4!1s0x95bcb436f18dc22f:0x36090a5d367889c6!8m2!3d-34.5488518!4d-58.4436438" target="_blank"><i class="fas fa-map-marker-alt"> </i>Belgrano (CABA)</a></li>
+				<li class="contactlist_item"><a href="tel:+54666666"><i class="fas fa-phone-square-alt">  +54 666 666</i></a></li>
+			</ul>
+		</div>
+		
+		<hr class="mt-0 d-inline-block mx-auto " style="width:95%;">
+	
+		<div class="pie">
+			<ul>
+				<span class="mr-3">Copyright © 2019 - JNN - Todos los derechos reservados</span>
+				<span class="mr-1"><a href="#">Términos y Condiciones</a> |</span>
+				<span class="mr-1"><a href="#">Politicas de Privacidad</a> |</span>
+				<span class="mr-1"><a href="#">Ayuda</a></span>
+			</ul>
+		</div>
+	</footer>	
+
 
 
 

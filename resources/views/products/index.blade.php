@@ -1,9 +1,9 @@
 @extends('layouts.app')
 @section('assets')
-    <link rel="stylesheet" href="{{asset('css/products.css')}}">
+    <link rel="stylesheet" href="{{asset('css/404.css')}}">
     <style>
         .pagination a {color:black}
-        #product-container {background-image: url('../images/not-found/not-found1.jpg');}
+        #product-container {background-image: url('../images/not-found/not-404.png');}
         .no-results {text-shadow: 2px 2px #000}
     </style>
 @endsection

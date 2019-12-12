@@ -1,0 +1,37 @@
+
+.navbar{
+    display: flex;
+    background-color:#FFC107;
+    -webkit-box-shadow: 0px 9px 10px -10px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0px 9px 10px -10px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 9px 10px -10px rgba(0, 0, 0, 0.5);
+}
+.navbar-brand img:hover{
+    -webkit-box-shadow: 0px 5px 10px 5px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0px 5px 10px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 5px 10px 5px rgba(0, 0, 0, 0.1);
+}
+
+#navbarToggler{
+    margin: 0 9% 0 9%;
+    justify-content: space-between;
+}
+
+.btn_nav {
+    background-color: #FFA000;
+    border-color:#FFA000;
+    -webkit-box-shadow: 0px 4px 8px -5px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0px 4px 8px -5px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 4px 8px -5px rgba(0, 0, 0, 0.5);
+    color: #212121;
+
+}
+.btn_nav:hover {
+    background-color: #757575;
+    border-color:#757575;
+}
+.carrito-de-compras:hover {
+    -webkit-box-shadow: 0px 5px 10px 5px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0px 5px 10px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 5px 10px 5px rgba(0, 0, 0, 0.1);
+}
