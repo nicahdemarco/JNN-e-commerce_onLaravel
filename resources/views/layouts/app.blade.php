@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" href="{{asset('css/header.css')}}">
+    <link rel="stylesheet" href="{{asset('css/navbar.css')}}">
     <link rel="stylesheet" href="{{asset('css/footer.css')}}">
     <link rel="stylesheet" href="{{asset('css/reset.css')}}">
     <link href="https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz" rel="stylesheet">
@@ -94,22 +94,30 @@
         </button>
 
         <div class="collapse navbar-collapse" id="navbarToggler">
-            <a class="navbar-brand" href="index.php">
+            <a class="navbar-brand" href="{{ url('/') }}">
                 <img src="images/tshirt.png" width="40" height="40" alt="logo">
             </a>
 
-            <div class="input-group mb-3">
-                <input type="text" class="form-control" placeholder="Buscar" aria-label="buscar" aria-describedby="basic-addon2">
+            <div class="input-group mb-3 align-middle">
+                <form action={{route('product.search')}} method="get" class="form-control mx-5 ">
+                    <input type="text" name="busqueda"  placeholder="Buscar" aria-label="buscar" aria-describedby="basic-addon2" style ='width:95%; border-style:none;'>
+                    <button type="submit" name="search-submit"style = "background-color:transparent; border-style:none;" ><i class="fas fa-search"></i></button>
+                </form>
             </div>
-
-            <button type="button" class="btn btn-info btn_nav" data-toggle="modal" data-target="#registro">
-                <a href="registro.php">Crear cuenta</a>
+            
+            @guest
+            <button type="button" class="btn btn-info btn_nav mx-1 " data-toggle="modal" data-target="#cuenta">
+                <a href="{{ route('login') }}">{{ __('Ingresar') }}>Ingresar</a>
             </button>
 
-            <button type="button" class="btn btn-info btn_nav" data-toggle="modal" data-target="#cuenta">
-                <a href="login.php">Ingresar</a>
+            @if (Route::has('register'))
+            <button type="button" class="btn btn-info btn_nav mx-1 " data-toggle="modal" data-target="#registro">
+                <a class="nav-link" href="{{ route('register') }}">{{ __('Registrate') }}</a>
             </button>
+            @endif
 
+            @else
+                @if (Auth::User()->role == 7)
         
             
             <a class="carrito-de-compras" href="carrito.php">
@@ -122,20 +130,6 @@
 
     {{-- <header id="main-header" class="main-header">
 
-        <div class='container-fluid title-background'>
-            <!-- titulo -->
-            <section class="page-title">
-                <h1>DANI-HERNI</h1>
-            </section>
-
-            <!-- search -->
-            <form action={{route('product.search')}} method="get">
-                <article class="bottom-header-search form-group">
-                    <input type="text" name="busqueda" placeholder="Buscar...">
-                    <button type="submit" name="search-submit" ><i class="fas fa-search"></i></button>
-                </article>
-            </form>
-        </div>
 
         <nav class="main-nav">
             <a href={{route('main')}}>Inicio</a>
@@ -150,44 +144,7 @@
 
     @yield('content')
 
-
-    {{-- <div class='container-fluid p-0'>
-        <footer class="main-footer">
-            <nav>
-                <article class="column-1 footer-article">
-                    <h3>Empresa</h3>
-                    <a href="#" class="link">Acerca de nosotros</a>
-                    <a href="#" class="link">Notiacias</a>
-                    <a href="#" class="link">Moda</a>
-                </article>
-
-                <article class="column-2 footer-article">
-                    <h3>Ayuda</h3>
-                    <a href="#" class="link">Contacto
-                    <a href="mailto:cedavilu@gmail.com"?subjet="Mensaje desde el sitio web" class="contact-logo"><i class="fas fa-envelope-square i"></i></a>
-                </article>
-
-                <article class="column-3 footer-article">
-                    <h3>Redes sociales</h3>
-                    <section class="social-network">
-                        <a href="http://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
-                        <a href="http://Twitter.com" target="_blank"><i class="fab fa-twitter-square"></i></a>
-                        <a href="http://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-                    </section>
-                </article>
-
-                <article class="column-4 footer-article">
-                    <h3>Información</h3>
-                    <a href="#" class="link">Revista Virtual</a>
-                </article>
-            </nav>
-
-            <section id='backtop' class="backtop">
-                <a href="#main-header"><i class="fas fa-angle-double-up"></i></a>
-            </section>
-        </footer>
-    </div> --}}
-
+    {{-- footer --}}
     <footer class="col-md-12 main-footer row">
 		<div>
 			<ul class="col-md-12 redeslist lista">
