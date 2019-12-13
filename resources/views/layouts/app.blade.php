@@ -18,7 +18,7 @@
     @yield('assets')
 </head>
 <body>
-    {{-- <div id='top-navbar-main' class='container-fluid p-0'> --}}
+    {{-- <div id='top-navbar-main ' class='container-fluid  p-0'> --}}
         {{-- <nav class="navbar navbar-expand-md">
             <section class="container-fluid">
                 <a class="navbar-brand" href="{{ url('/') }}">
