@@ -1,37 +1,44 @@
 @extends('layouts.app')
 
+
 @section('assets')
  <style>
     .carousel-inner {
         text-shadow: 1px 1px #000;
     }
+    .carousel{
+        height : 40vh;
+
+    }
  </style>
 @endsection
 
 @section('content')  
+
+<!-- carrusel  -->
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
         <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
         <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
     </ol>
-    <section class="carousel-inner">
-        <article class="carousel-item active">
-        <img class="d-block w-100" src="{{asset('images/carousel/fashion-1.jpg')}}" alt="First slide">
+    <section class="carousel-inner carousel"  >
+        <article class="carousel-item active ">
+        <img class="d-block w-100 carousel" src="{{asset('images/tshirt1.png')}}" alt="First slide">
         <article class="carousel-caption d-none d-md-block">
             <h3 class="carousel"><a href="{{route('women')}}">Coleccion verano para damas</a></h3>
             <h5>Para este verano, debes estar a la moda con Dani-Herni</h5>
         </article>
         </article>
         <article class="carousel-item">
-        <img class="d-block w-100 height: 200px" src="{{asset('images/carousel/fashion-2.jpg')}}" alt="Second slide">
+        <img class="d-block w-100 height: 200px carousel" src="{{asset('images/tshirt4.png')}}" alt="Second slide">
         <article class="carousel-caption d-none d-md-block">
         <h3 class="carousel"><a href="{{route('men')}}">Coleccion verano para caballeros</a></h3>
         <h5>Para este verano, debes estar a la moda con Dani-Herni</h5>
         </article>
         </article>
         <article class="carousel-item">
-        <img class="d-block w-100 height: 200px" src="{{asset('images/carousel/fashion-3.jpg')}}" alt="Third slide">
+        <img class="d-block w-100 height: 200px carousel" src="{{asset('images/tshirt3.png')}}" alt="Third slide">
         <article class="carousel-caption d-none d-md-block">
             <h3 class="carousel"><a href="{{route('kids')}}">Coleccion verano para los consentidos</a></h3>
             <h5>Para este verano, debes estar a la moda con Dani-Herni</h5>
@@ -47,6 +54,16 @@
         <span class="sr-only">Next</span>
     </a>
 </div>
+<!-- metodos de pago -->
+
+<section class="banner">
+		<div class="col-md-3 col-sm-12 col-xs-12 metodos"><i class="far fa-credit-card"></i>Tarjetas de crédito</div>
+		<div class="col-md-3 col-sm-12 col-xs-12 metodos"><i class="far fa-credit-card"></i>Tarjetas de débito</div>
+		<div class="col-md-3 col-sm-12 col-xs-12 metodos"><i class="fas fa-money-bill"></i>Efectivo y transferencia</div>
+		<div class="col-md-3 col-sm-12 col-xs-12 metodos"><i class="fas fa-shipping-fast"></i>Envíos a todo el país</div>
+	</section>
+
+
 <div class='container-fluid p-5 bg-light'> 
     <div class="container marketing">
         <!-- Three columns of text below the carousel -->
