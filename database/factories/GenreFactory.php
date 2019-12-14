@@ -5,6 +5,7 @@ use Faker\Generator as Faker;
 
 $factory->define(Model::class, function (Faker $faker) {
     return [
-        'name' => $faker->randomElement($array = array('Men', 'Women', "Kids")),
+        'name' => $faker->randomElement($array = array('index')),
     ];
 });
+        // 'name' => $faker->randomElement($array = array('Men', 'Women', "Kids")),

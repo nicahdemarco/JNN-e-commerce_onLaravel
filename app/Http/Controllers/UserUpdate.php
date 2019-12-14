@@ -27,7 +27,7 @@ class UserUpdate extends Controller
                 if (!\Hash::check($value, $user->password) == true) {
                     $fail($attribute.' is invalid.');
                 }
-              },
+            },
             "npassword" => 'nullable|alpha_num|min:8',
             "confirm-password" => 'nullable|alpha_num|min:8|same:npassword',
             "genre" => 'required',

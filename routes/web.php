@@ -1,6 +1,5 @@
 <?php
 
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,13 +13,17 @@
 
 // Aquí es donde estan todas las rutas que controlan todo el sitio
 //Esta es la ruta principal que llama a la página
-Route::get('/', 'PagesController@main')->name('main');
+Route::get('/', 'ProductController@index')->name('main');
+//Esta es la ruta lleva al usuario al registro
+Route::get('/registro', 'ProductController@index')->name('registro');
+//Esta es la ruta lleva al usuario al logueo
+Route::get('/login', 'ProductController@index')->name('login');
 //Aquí direcciono al usuario, cuando el da click en Preguntas Frecuentes
 Route::get('/faqs', 'PagesController@faqs')->name('faqs');
 //Aquí direccio al usuario cuando da click en las opciones de damas, Caballeros ó Niños.
-Route::get('/men', 'ProductController@indexmen')->name('men');
-Route::get('/women', 'ProductController@indexwomen')->name('women');
-Route::get('/kids', 'ProductController@indexkids')->name('kids');
+// Route::get('/index', 'ProductController@index')->name('index');
+// Route::get('/women', 'ProductController@index')->name('women');
+// Route::get('/kids', 'ProductController@index')->name('kids');
 //Aquí es donde muestros los productos
 Route::get('/show/{id}', 'ProductController@show')->name('front.product.show');
 //Ruta creada para buscar los productos
