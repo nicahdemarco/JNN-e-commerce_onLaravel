@@ -10,9 +10,9 @@ class PagesController extends Controller
     {
         return view('main');
     }
-    public function registro()
+    public function register()
     {
-        return view('auth.registro');
+        return view('auth.register');
     }
     public function login()
     {

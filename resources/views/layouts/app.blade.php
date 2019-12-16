@@ -37,7 +37,7 @@
             </div>
 
             <button type="button" class="btn btn-info btn_nav" data-toggle="modal" data-target="#registro">
-                <a href={{route('registro')}}>Registrate</a>
+                <a href={{route('register')}}>Registrate</a>
             </button>
 
             <button type="button" class="btn btn-info btn_nav" data-toggle="modal" data-target="#cuenta">

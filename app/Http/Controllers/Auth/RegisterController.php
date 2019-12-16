@@ -90,7 +90,7 @@ class RegisterController extends Controller
             'municipio' => $data['municipio'],
         ]);
     }
- 
+
 public function show()
 {
     return view('auth.register');

@@ -15,7 +15,7 @@
 //Esta es la ruta principal que llama a la página
 Route::get('/', 'ProductController@index')->name('main');
 //Esta es la ruta lleva al usuario al registro
-Route::get('/registro', 'ProductController@index')->name('registro');
+Route::get('/register', 'ProductController@index')->name('register');
 //Esta es la ruta lleva al usuario al logueo
 Route::get('/login', 'ProductController@index')->name('login');
 //Aquí direcciono al usuario, cuando el da click en Preguntas Frecuentes
