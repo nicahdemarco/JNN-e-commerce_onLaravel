@@ -18,7 +18,7 @@
     @yield('assets')
 </head>
 <body>
-    {{-- <div id='top-navbar-main ' class='container-fluid  p-0'> --}}
+    {{-- <div id='top-navbar-main ' class='container-fluid      p-0'>
         {{-- <nav class="navbar navbar-expand-md">
             <section class="container-fluid">
                 <a class="navbar-brand" href="{{ url('/') }}">
@@ -42,12 +42,12 @@
                                 <a class="nav-link" href="{{ route('login') }}">{{ __('Ingresar') }}</a>
                             </li>
                             <li class="nav-item">
-                                @if (Route::has('register'))
+                                <!-- @if (Route::has('register')) -->
                                     <a class="nav-link" href="{{ route('register') }}">{{ __('Registrarse') }}</a>
-                                @endif
+                                <!-- @endif -->
                             </li>
-                        @else
-                            @if (Auth::User()->role == 7)
+                        <!-- @else -->
+                            <!-- @if (Auth::User()->role == 7) -->
                             <li class="nav-item dropdown">
 
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -59,7 +59,7 @@
                                     <a class="dropdown-item" href="{{route('users.index')}}">{{ __('Usuarios') }}</a>
                                 </section>
                             </li>
-                            @endif
+                            <!-- @endif -->
                             <li class='nav-item'>
                                 <a class='nav-link' href={{route('cart')}}><i class="fas fa-shopping-cart"></i></a>
                             </li>

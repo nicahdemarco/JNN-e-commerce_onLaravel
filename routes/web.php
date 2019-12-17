@@ -14,7 +14,7 @@
 
 // Aquí es donde estan todas las rutas que controlan todo el sitio
 //Esta es la ruta principal que llama a la página
-Route::get('/', 'PagesController@main')->name('main');
+Route::get('/', 'ProductController@index')->name('main');
 //Aquí direcciono al usuario, cuando el da click en Preguntas Frecuentes
 Route::get('/faqs', 'PagesController@faqs')->name('faqs');
 //Aquí direccio al usuario cuando da click en las opciones de damas, Caballeros ó Niños.

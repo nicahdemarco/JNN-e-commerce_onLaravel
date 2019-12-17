@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@extends('ProductController.php')
 
 
 @section('assets')
@@ -63,31 +64,58 @@
 		<div class="col-md-3 col-sm-12 col-xs-12 metodos"><i class="fas fa-shipping-fast"></i>Envíos a todo el país</div>
 	</section>
 
+<!-- Productos -->
 
-<div class='container-fluid p-5 bg-light'> 
-    <div class="container marketing">
+<div class="container contenedor-productos">
+		<section class="col-lg-12 col-md-12 col-sm-12 col-xs-12 productos" id="productos1">
+
+			<article class="col-xs-12 product-card">
+				@foreach ($products as $product)
+					<a href="Product.php">
+						<div class="photo-container">
+						</div>
+					</a>
+					@foreach ($product as $pro)
+						
+
+							<div class="descripcion">
+								
+							</div>
+
+						
+					@endforeach
+
+				@endforeach
+			</article>
+
+		</section>
+
+	</div>
+
+<!-- <div class='container-fluid p-5 bg-light'> 
+    <div class="container marketing"> -->
         <!-- Three columns of text below the carousel -->
-        <article class="row">
+        <!-- <article class="row">
             <section class="col-lg-4">
                 <img class="rounded-circle" src="{{asset('images/main/image-1.jpg')}}" alt="Generic placeholder image" width="140" height="140">
                 <h2>Ropa de moda</h2>
                 <p> ¡La mejor Ropa de Moda se encuentra en Dani-Herni!
                     Si estás buscando la mejor alternativa para vestirte a la moda, llegaste a sitio indicado. En nuestra tienda online podrás encontrar lo último en Ropa de Moda. Ya sea para Invierno o Verano, nosotros tenemos los mejores diseños para que los puedas lucir de la mejor manera.</p>
-                <p><a class="btn btn-dark" href="#" role="button">Ver más&raquo;</a></p>
-            </section><!-- /.col-lg-4 -->
-            <section class="col-lg-4">
+                <p><a class="btn btn-dark" href="#" role="button">Ver más&raquo;</a></p> -->
+            <!-- </section>/.col-lg-4 -->
+            <!-- <section class="col-lg-4">
                 <img class="rounded-circle" src="{{asset('images/main/image-2.jpg')}}" alt="Generic placeholder image" width="140" height="140">
                 <h2>Revista virtual</h2>
                 <p>Si queres enterarte de novedades sobre Dani-Herni, te invitamos a que te sumes a nuestro repositorio público, donde podras encontrar todo lo que requeires para actualizar tus conocimientos sobre Programación Web Full Stack https://github.com/danielfuentes no te olvides darnos una estrellita.</p>
-                <p><a class="btn btn-dark" href="#" role="button">Ver más&raquo;</a></p>
-            </section><!-- /.col-lg-4 -->
-            <section class="col-lg-4">
+                <p><a class="btn btn-dark" href="#" role="button">Ver más&raquo;</a></p> -->
+            <!-- </section> /.col-lg-4 -->
+            <!-- <section class="col-lg-4">
                 <img class="rounded-circle" src="{{asset('images/main/image-3.jpg')}}" alt="Generic placeholder image" width="140" height="140">
                 <h2>Preguntas frecuentes</h2>
                 <p>Si posees alguna duda sobre Dani-Herni, con respecto a los servicios que te ovfrecemos,  no dudes primero que nada de revisar nuestra sección de preguntas frecuentes las cuales todos los días la actualizamos y así te danmos un mejor servicio, para que estes al día con la moda.</p>
-            <p><a class="btn btn-dark" href="{{route('faqs')}}" role="button">Ver más&raquo;</a></p>
-            </section><!-- /.col-lg-4 -->
-        </article><!-- /.row -->
-    </div>
-</div>
+            <p><a class="btn btn-dark" href="{{route('faqs')}}" role="button">Ver más&raquo;</a></p> -->
+            <!-- </section>/.col-lg-4 -->
+        <!-- </article>/.row -->
+    <!-- </div>
+</div> -->
 @endsection
