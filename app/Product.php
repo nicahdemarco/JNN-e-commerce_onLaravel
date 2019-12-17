@@ -7,8 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
-    protected $table = "productos";
-    
+    protected $table = "products";
+
     protected $guarded = [];
 
     public function category()

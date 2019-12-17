@@ -1,5 +1,7 @@
 @extends('layouts.app')
-
+@section('titulo')
+	<title>{{ config('app.name', 'Laravel') }}</title>
+@endsection
 @section('assets')
 	{{-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> --}}
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">

@@ -53,31 +53,29 @@
 </div>
 <!-- metodos de pago -->
 <section class="banner">
-        <div class="col-md-3 col-sm-12 col-xs-12 metodos"><i class="far fa-credit-card"></i>Tarjetas de crédito</div>
-        <div class="col-md-3 col-sm-12 col-xs-12 metodos"><i class="far fa-credit-card"></i>Tarjetas de débito</div>
-        <div class="col-md-3 col-sm-12 col-xs-12 metodos"><i class="fas fa-money-bill"></i>Efectivo y transferencia</div>
-        <div class="col-md-3 col-sm-12 col-xs-12 metodos"><i class="fas fa-shipping-fast"></i>Envíos a todo el país</div>
-    </section>
+    <div class="col-md-3 col-sm-12 col-xs-12 metodos"><i class="far fa-credit-card"></i>Tarjetas de crédito</div>
+    <div class="col-md-3 col-sm-12 col-xs-12 metodos"><i class="far fa-credit-card"></i>Tarjetas de débito</div>
+    <div class="col-md-3 col-sm-12 col-xs-12 metodos"><i class="fas fa-money-bill"></i>Efectivo y transferencia</div>
+    <div class="col-md-3 col-sm-12 col-xs-12 metodos"><i class="fas fa-shipping-fast"></i>Envíos a todo el país</div>
+</section>
 <!-- Productos -->
-    <div class="container contenedor-productos">
-        <section class="col-lg-12 col-md-12 col-sm-12 col-xs-12 productos" id="productos1">
-            <article class="col-xs-12 product-card">
-                {{-- @dd($products) --}}
-                @foreach ($products as $product)
+    <div class="container contenedor-productos d-flex">
+        <section class="col-lg-12 col-md-12 col-sm-12 col-xs-12 productos flex-wrap" id="productos1">
+            @foreach ($products as $product)
+                <article class="col-xs-12 product-card">
                     <a href="Product.php">
                         <div class="photo-container">
+                            <img src="{{asset('storage/products/'.$product->nombre. '.jpg') }}" alt="remera">
                         </div>
                     </a>
-                    @foreach ($product as $pro)
+                    
+                    <div class="descripcion">
+                        <h4>{{$product->precio}}</h4>
+                        <p>{{$product->descripcion}}</p>
+                    </div>
                         
-                        <div class="descripcion">
-                            <h4>{{$pro->precio}}</h4>
-                            <p>{{$pro->descripcion}}</p>
-                        </div>
-                        
-                    @endforeach
-                @endforeach
-            </article>
+                </article>
+            @endforeach
         </section>
     </div>
 
