@@ -78,10 +78,11 @@ i{
 .promo-content{
     padding: 2%;
 }
-.promo1{
+.promo1 {
     background-image: url(../images/selfie.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
     height: 100%;
     padding: 2%;
     -webkit-box-shadow: 0px 9px 10px -10px rgba(0, 0, 0, 0.5);
@@ -89,7 +90,7 @@ i{
     box-shadow: 0px 9px 10px -10px rgba(0, 0, 0, 0.5);
 
 }
-.promo2 {
+.promo2, .promo3 {
     background-image: url(../images/faqs.jpg);
     background-repeat: no-repeat;
     background-position: center;
@@ -100,29 +101,26 @@ i{
     -webkit-box-shadow: 0px 9px 10px -10px rgba(0, 0, 0, 0.5);
     -moz-box-shadow: 0px 9px 10px -10px rgba(0, 0, 0, 0.5);
     box-shadow: 0px 9px 10px -10px rgba(0, 0, 0, 0.5);
-
-}
-
-.promo1:hover ,.promo2:hover ,.promo3:hover {
-    background: rgba(255, 236, 179, .4);
-}
-a:link{
-    text-decoration: none;
 }
 
 .promo3 {
-    height: 50%;
-    background-color: rgb(27, 226, 21);
-    /* background-image: url(../images/catalogo/IMG_25.jpeg); */
-    background-repeat: no-repeat;
-    background-size: cover;
-    margin-top: 1%;
-    padding: 2%;
-    -webkit-box-shadow: 0px 9px 10px -10px rgba(0, 0, 0, 0.5);
-    -moz-box-shadow: 0px 9px 10px -10px rgba(0, 0, 0, 0.5);
-    box-shadow: 0px 9px 10px -10px rgba(0, 0, 0, 0.5);
+    background-image: url(../images/frase.jpg);
+    background-position: center;
+}
 
+.promo1:hover, .promo2:hover ,.promo3:hover {
+        border-bottom: 2px solid transparent;
+        border-color: #757575;
+        -webkit-box-shadow: 4px 4px 6px 4px #9E9E9E;
+        -moz-box-shadow: 4px 4px 6px 4px #9E9E9E;
+        box-shadow: 0px 4px 6px 4px #9E9E9E;
 }
-.promo3:hover {
-    background-color: #FFECB3ed;
+h3:hover {
+    background-color: rgba(255, 193, 7, 0.4);
 }
+a:link,
+a:visited {
+    text-decoration: none;
+}
+
+

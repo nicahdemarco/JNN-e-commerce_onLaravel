@@ -20,14 +20,12 @@ Route::get('/register', 'ProductController@index')->name('register');
 Route::get('/login', 'ProductController@index')->name('login');
 //Aquí direcciono al usuario, cuando el da click en Preguntas Frecuentes
 Route::get('/faqs', 'PagesController@faqs')->name('faqs');
-//Aquí direccio al usuario cuando da click en las opciones de damas, Caballeros ó Niños.
-// Route::get('/index', 'ProductController@index')->name('index');
-// Route::get('/women', 'ProductController@index')->name('women');
-// Route::get('/kids', 'ProductController@index')->name('kids');
+//Aquí direcciono al usuario, detalle del producto
+Route::get('/productDetail', 'ProductController@productDetail')->name('productDetail');
 //Aquí es donde muestros los productos
 Route::get('/show/{id}', 'ProductController@show')->name('front.product.show');
 //Ruta creada para buscar los productos
-Route::get('/search', 'ProductController@search')->name('product.search');
+Route::get('/search', 'ProductController@search')->name('product.search');  
 //Este grupo de rutas controla si el usuario es administrador o no
 //Ojo El usuario administrador deben colocarle en la base de datos tabla users, el role 7
 Route::group(['prefix' => 'admin', 'middleware' => ['auth','role']], function () {

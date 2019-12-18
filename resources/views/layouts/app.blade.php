@@ -8,15 +8,16 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     @yield('titulo')
     
-    
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" href="{{asset('css/index.css')}}">
+    {{-- <link rel="stylesheet" href="{{asset('css/index.css')}}">
     <link rel="stylesheet" href="{{asset('css/navbar.css')}}">
     <link rel="stylesheet" href="{{asset('css/footer.css')}}">
     <link rel="stylesheet" href="{{asset('css/reset.css')}}">
-    <link rel="stylesheet" href="{{asset('css/productos.css')}}">
+    <link rel="stylesheet" href="{{asset('css/productos.css')}}"> --}}
+    <link rel="stylesheet" href="{{asset('css/master.css')}}">
+
 
     <link href="https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz" rel="stylesheet">
 </head>
@@ -24,8 +25,6 @@
 
     @yield('assets')
     
-    
-        {{-- Esta es la navbar que esta bien --}}
     <nav class="navbar navbar-expand-lg w-100">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -39,40 +38,56 @@
             <div class="input-group mb-3">
                 <input type="text" class="form-control" action={{route('product.search')}} method="get" placeholder="Buscar" aria-label="buscar" aria-describedby="basic-addon2">
             </div>
-
-            <button type="button" class="btn btn-info btn_nav" data-toggle="modal" data-target="#registro">
-                <a href={{route('register')}}>Registrate</a>
-            </button>
-
+            @guest
             <button type="button" class="btn btn-info btn_nav" data-toggle="modal" data-target="#cuenta">
-                <a href={{route('login')}}>Ingresar</a>
+                <a href={{route('login')}}>{{__('Ingresar')}}</a>
             </button>
-    
-            <a class="carrito-de-compras" href="carrito.php">
+                @if(Route::has('register'))
+                <button type="button" class="btn btn-info btn_nav" data-toggle="modal" data-target="#registro">
+                    <a href={{route('register')}}>{{__('Registrate')}}</a>
+                </button>
+                @endif
+            @else 
+                @if (Auth::user()->role==7)
+                    <button type="button" class="btn btn-info btn_nav" data-toggle="modal" data-target="#registro">
+                        <a href=#>{{__('Administrar')}}</a>
+                    </button>
+                <section class="">
+                    <button type="button" class="btn btn-info btn_nav" data-toggle="modal" data-target="#registro">
+                        <a href={{route('products.index')}}>{{__('Productos')}}</a>
+                    </button>
+
+                    <button type="button" class="btn btn-info btn_nav" data-toggle="modal" data-target="#registro">
+                        <a href={{route('users.index')}}>{{__('Usuarios')}}</a>
+                    </button>
+                </section>
+                @endif
+                {{-- Hacia el carrito --}}
+            <a class="carrito-de-compras" href={{route('cart')}}>
                 <img src="images/tcart.png" width="40" height="40" data-toggle="tooltip" data-placement="top" title="Carrito de compras" alt="carrito de compras">
-                (<?php echo (empty($_SESSION['CARRITO']))?0:count($_SESSION['CARRITO']);?>) 
             </a>
+
+            <a id="" href='#'>{{ Auth::user()->name }}</a>
+
+            <section class="dropdow-menu dropdown-menu-right">
+                <img src={{asset(Auth::user()->avatar)}} class="avatar" alt="">   
+                <a class="dropdown-item" href="{{ route('profile')}}"></a>
+                <a class="dropdown-item" href="{{ route('logout')}}">
+                    onclick="event.preventDefault();
+                        document.getElementById("logout-form").submit();"
+                </a>
+
+                <form id="logout-form" action="{{route("logout")}}" method="POST" style="display:none;">
+                    @csrf
+                </form>
+                
+            </section>
+            @endguest
+
         </div>
     </nav>
-    
-
-    {{-- 
-            <!-- search -->
-            <form action={{route('product.search')}} method="get">
-                <article class="bottom-header-search form-group">
-                    <input type="text" name="busqueda" placeholder="Buscar...">
-                    <button type="submit" name="search-submit" ><i class="fas fa-search"></i></button>
-                </article>
-            </form>
-    --}}
-
 
     @yield('content')
-
-    {{-- @yield('content2') --}}
-
-
-
     
     {{-- footer --}}
     <footer class="col-md-12 main-footer row">
@@ -135,8 +150,6 @@
             </ul>
         </div>
     </footer>   
-
-
 
 
     <!-- BOOTSTRAP 4 -->

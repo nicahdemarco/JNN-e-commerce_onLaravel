@@ -13,6 +13,13 @@ class ProductController extends Controller {
         return view('main')->with("products", $products);
     }
 
+    public function index()
+    {
+
+        $products = Product::get();
+        // dd($products);
+        return view('main')->with("products", $products);
+    }
     public function search(Request $request) {
     
         $input = $request->input('busqueda');

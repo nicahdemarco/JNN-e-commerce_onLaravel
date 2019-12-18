@@ -10,6 +10,10 @@ class PagesController extends Controller
     {
         return view('main');
     }
+    public function productDetail()
+    {
+        return view('productDetail.productDetail');
+    }
     public function register()
     {
         return view('auth.register');
