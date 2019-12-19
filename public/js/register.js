@@ -36,7 +36,7 @@
             provinciaselect.appendChild(select)
             var opcionseleccionar = document.createElement("option")
             select.appendChild(opcionseleccionar)
-            opcionseleccionar.innerHTML = "<option>Seleccionar</option>";
+            opcionseleccionar.innerHTML = "<option>Seleccioná tu provincia</option>";
             for (var indice of data.provincias) {
                 var opciones = document.createElement("option")
                 opciones.value = indice.id
@@ -59,18 +59,15 @@ provinciaselect.addEventListener('change', function() {
                 var select = document.createElement('select')
                 select.name = 'municipio'
                 select.classList.add('custom-select')
-                municipioselect.innerHTML = '<h6 class="text-center">Ingresa el municipio</h6>'
                 municipioselect.appendChild(select)
-                select.innerHTML = "<option>Seleccionar</option>";
+                select.innerHTML = "<option>Seleccioná tu partido</option>";
             for (var indice of data.municipios){
                 var opcionesMuni = document.createElement("option")
                 opcionesMuni.value = indice.nombre
                 opcionesMuni.innerHTML = indice.nombre
                 select.appendChild(opcionesMuni)
             }
-
         })
-
     }
 
 

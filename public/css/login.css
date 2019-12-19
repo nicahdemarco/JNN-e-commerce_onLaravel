@@ -9,6 +9,22 @@ body {
 .container-fluid {
   padding-left: 0px;
   padding-right: 0px;
+  margin-bottom: 35px;
+}
+
+#form02 {
+    width: 500px;
+    margin: 0 auto;
+    color: #999;
+    border-radius: 3px;
+    background: #FFC107;
+    border-radius: 3px;
+    box-shadow: 0px 4px 8px -5px rgba(0, 0, 0, 0.5);
+}
+
+.form-control {
+  width: 100%;
+
 }
 
 fieldset {
@@ -24,7 +40,6 @@ input {
 
 textarea {
   margin-top: 4px;
-  height:80px;
 }
 
 button {

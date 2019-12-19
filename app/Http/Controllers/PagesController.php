@@ -10,6 +10,14 @@ class PagesController extends Controller
     {
         return view('main');
     }
+    public function register()
+    {
+        return view('auth.register');
+    }
+    public function login()
+    {
+        return view('auth.login');
+    }
 
     public function faqs()
     {

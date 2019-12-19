@@ -49,7 +49,7 @@ class LoginController extends Controller
         return Socialite::driver($provider)->redirect();
     }
 
-    public function handleProviderCallback($provider)
+    public function handleProviderCallback ($provider)
     {
         try{
             $user = Socialite::driver($provider)->user();
@@ -69,26 +69,19 @@ class LoginController extends Controller
         $user = User::where('provider_id', $user->getId() )->first();
         if (!$user){
             try{
-
                 if (isset($attributes['email'])) {
-                  Validator::make(['email' => $attributes['email']],
-                  ['email' => 'unique:users,email'])->validate();
-
-
+                    Validator::make(['email' => $attributes['email']],
+                    ['email' => 'unique:users,email'])->validate();
                 }
 
                 $user=  User::create($attributes);
-            }catch (ValidationException $e){
-              return redirect()->to('/auth/login');
+            } catch (ValidationException $e) {
+                return redirect()->to('/auth/login');
             }
         }
 
         $this->guard()->login($user);
-       return redirect()->to($this->redirectTo);
-
-
+            return redirect()->to($this->redirectTo);
 
     }
-
-
 }
