@@ -3,8 +3,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="{{asset('css/product.css')}}">
 <link rel="stylesheet" href="{{asset('css/reset.css')}}">
-
-
 @endsection
 
 
