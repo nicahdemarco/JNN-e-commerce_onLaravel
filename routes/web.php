@@ -21,7 +21,7 @@ Route::get('/login', 'ProductController@index')->name('login');
 //Aquí direcciono al usuario, cuando el da click en Preguntas Frecuentes
 Route::get('/faqs', 'PagesController@faqs')->name('faqs');
 //Aquí direcciono al usuario, detalle del producto
-Route::get('/productDetail', 'ProductController@productDetail')->name('productDetail');
+Route::get('/productDetail/{id}', 'ProductController@productDetail')->name('productDetail');
 //Aquí es donde muestros los productos
 Route::get('/show/{id}', 'ProductController@show')->name('front.product.show');
 //Ruta creada para buscar los productos

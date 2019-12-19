@@ -10,10 +10,10 @@ class PagesController extends Controller
     {
         return view('main');
     }
-    public function productDetail()
-    {
-        return view('productDetail.productDetail');
-    }
+    // public function productDetail()
+    // {
+    //     return view('productDetail.productDetail');
+    // }
     public function register()
     {
         return view('auth.register');
@@ -22,7 +22,7 @@ class PagesController extends Controller
     {
         return view('auth.login');
     }
-
+    
     public function faqs()
     {
         return view('faqs.faqs');
