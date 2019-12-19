@@ -1,4 +1,5 @@
 @extends('layouts.app')
+
 @section('assets')
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="{{asset('css/product.css')}}">
@@ -7,7 +8,6 @@
 
 
 @section('content')
-
 	<body>
 		{{-- <div class="container">
 			<section class="card">
@@ -61,28 +61,19 @@
 				<section class="detalle-producto d-xs-flex">
 				
 					<article class="col-md-6 col-sm-12 col-xs-12 detalle-imagen">
-						<section class="tab-pane active justify-content-center" style="margin-left:35px"id="pic-1">
-							<img class="asd" src="{{asset($product->imageLoc)}}" />
+						<section class="tab-pane active justify-content-center" style="margin:20%"id="pic-1">
+							<img class="asd" src="{{asset('storage/products/'.$product->nombre.'.jpg')}}" />
 						</section>
 
-						<section class="tab-pane" style="margin-left:35px" id="pic-2">
-							<img class="asd" src="{{asset($product->imageLoc2)}}" />
-						</section>
-
-						<ul class="preview-thumbnail nav nav-tabs">
-							<li><a class="active" data-target="#pic-1" data-toggle="tab"><img  src="{{asset($product->imageLoc)}}" /></a></li>
-							<li><a data-target="#pic-2" data-toggle="tab"><img src="{{asset($product->imageLoc2)}}" /></a></li>
-						</ul>
-
-						<div class="row d-flex botones">
+						<div class="row d-flex botones justify-content-center mb-5">
 							<input class="btn btn-primary" type="submit" value="Continuar comprando">
 						</div>
 					</article>
-
+						{{-- @dd($product) --}}
 					<aside class="col-md-6 col-sm-12 col-xs-12 detalle-descripcion">
-						<h3 class="product-title">{{$product->name}}</h3>
-						<h3 class="product-description title">{{$product->description}}</h3>
-						<h2 class="price">PRECIO: <span>${{$product->price}}</span></h2>
+						<h3 class="product-title">{{$product->nombre}}</h3>
+						<h3 class="product-description title">{{$product->descripcion}}</h3>
+						<h2 class="price">PRECIO: <span>${{$product->precio}}</span></h2>
 						{{-- <h3 class="frase">Frase: ipsum dolor sit amet co blanca</h3> --}}
 						<p class="texto-descripcion">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur natus exercitationem, beatae quo quibusdam ipsa repudiandae possimus aperiam unde nam?
 						</p>
@@ -125,9 +116,9 @@
 						
 						<div class="row d-flex botones">
 							<form action="" method="post">
-								<input type="hidden" name="id" id="id" value="<?= $producto['id'];?>">
-								<input type="hidden" name="nombre" id="nombre" value="<?= $producto['nombre'];?>">
-								<input type="hidden" name="precio" id="precio" value="<?= $producto['precio'];?>">
+								<input type="hidden" name="id" id="id" value="<?= $product['id'];?>">
+								<input type="hidden" name="nombre" id="nombre" value="<?= $product['nombre'];?>">
+								<input type="hidden" name="precio" id="precio" value="<?= $product['precio'];?>">
 								<input type="hidden" name="cantidad" id="cantidad" value="<?= 1;?>">
 								
 								<a href={{route('cart.add', $product->id)}}></a>
