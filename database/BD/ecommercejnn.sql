@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 17-12-2019 a las 00:34:39
+-- Tiempo de generación: 18-12-2019 a las 04:13:55
 -- Versión del servidor: 10.4.8-MariaDB
 -- Versión de PHP: 7.1.33
 
@@ -48,10 +48,10 @@ CREATE TABLE `bancos` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `carrito_compras`
+-- Estructura de tabla para la tabla `cart`
 --
 
-CREATE TABLE `carrito_compras` (
+CREATE TABLE `cart` (
   `id` int(11) NOT NULL,
   `total` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -114,10 +114,10 @@ CREATE TABLE `pedidos` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `productos`
+-- Estructura de tabla para la tabla `products`
 --
 
-CREATE TABLE `productos` (
+CREATE TABLE `products` (
   `id` int(11) NOT NULL,
   `nombre` varchar(45) DEFAULT NULL,
   `descripcion` varchar(45) DEFAULT NULL,
@@ -125,10 +125,10 @@ CREATE TABLE `productos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Volcado de datos para la tabla `productos`
+-- Volcado de datos para la tabla `products`
 --
 
-INSERT INTO `productos` (`id`, `nombre`, `descripcion`, `precio`) VALUES
+INSERT INTO `products` (`id`, `nombre`, `descripcion`, `precio`) VALUES
 (1, 'remera1', 'remera estampada', 499),
 (2, 'remera2', 'remera estampada', 499),
 (3, 'remera3', 'remera estampada', 499),
@@ -159,12 +159,16 @@ CREATE TABLE `tip_pagos` (
 --
 
 CREATE TABLE `users` (
-  `id` int(11) NOT NULL,
-  `nombre` varchar(45) DEFAULT NULL,
+  `role` int(11) DEFAULT NULL,
+  `name` varchar(45) DEFAULT NULL,
+  `lname` varchar(45) DEFAULT NULL,
   `email` varchar(45) DEFAULT NULL,
-  `contrasenia` varchar(45) DEFAULT NULL,
+  `password` varchar(45) DEFAULT NULL,
+  `genre` varchar(45) DEFAULT NULL,
   `avatar` varchar(45) DEFAULT NULL,
-  `role` int(11) DEFAULT NULL
+  `provincia` varchar(45) DEFAULT NULL,
+  `municipio` varchar(45) DEFAULT NULL,
+  `id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -184,9 +188,9 @@ ALTER TABLE `bancos`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `carrito_compras`
+-- Indices de la tabla `cart`
 --
-ALTER TABLE `carrito_compras`
+ALTER TABLE `cart`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -214,9 +218,9 @@ ALTER TABLE `pedidos`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `productos`
+-- Indices de la tabla `products`
 --
-ALTER TABLE `productos`
+ALTER TABLE `products`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -248,9 +252,9 @@ ALTER TABLE `bancos`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT de la tabla `carrito_compras`
+-- AUTO_INCREMENT de la tabla `cart`
 --
-ALTER TABLE `carrito_compras`
+ALTER TABLE `cart`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
@@ -278,21 +282,15 @@ ALTER TABLE `pedidos`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT de la tabla `productos`
+-- AUTO_INCREMENT de la tabla `products`
 --
-ALTER TABLE `productos`
+ALTER TABLE `products`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de la tabla `tip_pagos`
 --
 ALTER TABLE `tip_pagos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de la tabla `users`
---
-ALTER TABLE `users`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
