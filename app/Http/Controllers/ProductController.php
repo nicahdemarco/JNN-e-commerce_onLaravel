@@ -13,8 +13,7 @@ class ProductController extends Controller {
         return view('main')->with("products", $products);
     }
 
-    public function index()
-    {
+    public function productDetail() {
 
         $products = Product::get();
         // dd($products);
