@@ -66,7 +66,7 @@
 						</section>
 
 						<div class="row d-flex botones justify-content-center mb-5">
-							<input class="btn btn-primary" type="submit" value="Continuar comprando">
+							<input href="#main.blade.php" class="btn btn-primary" type="submit" value="Continuar comprando">
 						</div>
 					</article>
 						{{-- @dd($product) --}}
