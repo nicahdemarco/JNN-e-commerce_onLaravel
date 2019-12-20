@@ -32,7 +32,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth','role']], function ()
     Route::resource('/products', 'AdminProductController');
     Route::resource('/users', 'AdminUserController');
 });
-//Aquí accedo al perfil del usuario para efctuar cualquier ajuste
+//Aquí accedo al perfil del usuario para efectuar cualquier ajuste      
 Route::get('/profile', "UserController@show")->name("profile")->middleware('auth');
 // Aquí es donde controlo lo del carrito de compras, agregar productos
 Route::get('cart/add/{id}', "CartController@add")->name('cart.add')->middleware('auth');

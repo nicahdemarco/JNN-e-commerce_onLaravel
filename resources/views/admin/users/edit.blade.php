@@ -13,7 +13,7 @@
 @endsection
 @section('content')
 <div id='product-container' class="container-fluid p-0">
-    <section class="container pt-3 pb-3">
+    <section class="container pt-3 pb-3 my-5">
         <form class='form-group' method="POST" action="{{route('users.update',['id' => $user->id])}}" enctype="multipart/form-data" >
             @method('PUT')
             @csrf
@@ -21,7 +21,7 @@
                 <section class="col-md-3 col-sm-6">
                     <article class="product-grid mb-4 mt-4">
                         <div class="product-image">
-                            <img class="pic-1" src="{{asset($user->avatar)}}">
+                            <img class="img-circle img-responsive" src="{{asset($user->avatar)}}">
                         </div>
                     </article>
                     <article class='container-fluid p-0 mb-4'>
@@ -32,7 +32,7 @@
                 <section class="col-md-9 col-sm-6">
                     <article class="card-body p-2 pl-4">
                         <h3 class="title mb-3"><input type="text" style="width: 100%;" name="name" id="name" value="{{$user->name}}"></h3>
-                        <hr>
+                        
                         <dl class="item-property">
                             <dt>Email</dt>
                             <dd>{{$user->email}}</dd>
@@ -41,7 +41,7 @@
                             <dt>Género</dt>
                             <dd>
                                 <select name="genre" id="genre">
-                                    <option value="{{$user->genre}}" selected>@if ($user->genre == null) Ninguno @else {{$user->genre}}   @endif</option>
+                                    <option value="{{$user->genre}}" selected>@if ($user->genre == null) Ninguno @else {{$user->genre}} @endif</option>
                                     @foreach ($genres as $genre)
                                         @if ($genre != $user->genre)
                                             <option value="{{$genre}}">{{$genre}}</option>
@@ -50,7 +50,7 @@
                                 </select>
                             </dd>
                         </dl>
-                        <hr>
+                        
                         <dl class="item-property">
                             <dt>Creado el</dt>
                             <dd>{{$user->created_at}}</dd>

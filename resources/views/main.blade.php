@@ -81,7 +81,7 @@
     </div>
 
     <section id="newsletter" class="col-md-12 w-100 mails">
-		<h3 class="susc">subscribite para recibir novedades</h3>
+		<h3 class="susc mx-5">subscribite para recibir novedades</h3>
 		<div class="input-group mb-3">
 			<input type="text" class="form-control" placeholder="tu email" aria-label="Recipient's username" aria-describedby="button-addon2">
 			<div class="input-group-append">

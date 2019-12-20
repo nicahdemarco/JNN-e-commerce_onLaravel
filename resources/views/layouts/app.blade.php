@@ -67,17 +67,23 @@
                 <img src="images/tcart.png" width="40" height="40" data-toggle="tooltip" data-placement="top" title="Carrito de compras" alt="carrito de compras">
             </a>
 
-            <a id="" href='#'>{{ Auth::user()->name }}</a>
+            <section class="dropdown">
+                <span id="" href='#'>{{ Auth::user()->name }}</span>
 
-            <section class="dropdow-menu dropdown-menu-right">
-                <img src={{asset(Auth::user()->avatar)}} class="avatar" alt="">   
-                <a class="dropdown-item" href="{{ route('profile')}}"></a>
-                <a class="dropdown-item" href="{{ route('logout')}}">
-                    onclick="event.preventDefault();
-                        document.getElementById("logout-form").submit();"
-                </a>
+                <button class="btn btn-outline-light btn-round"  style=" border-style: none;"type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <img src={{asset(Auth::user()->avatar)}} class="avatar dropdown-toggle" style="height:40px; width:40px; border-radius: 50%;" alt="avatar de usuario">   
+                </button>  
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">     
+                    <a class="dropdown-item" href="{{ route('profile')}}">Perfil</a>
+                    <a class="dropdown-item" href="{{ route('logout')}}">Logout
+                        <script>
+                            onclick="event.preventDefault()";
+                                document.getElementById("logout-form").submit();
+                        </script> 
+                    </a>
+                </div>
 
-                <form id="logout-form" action="{{route("logout")}}" method="POST" style="display:none;">
+                <form id="logout-form" action="{{route('logout')}}" method="POST" style="display:none;">
                     @csrf
                 </form>
                 
