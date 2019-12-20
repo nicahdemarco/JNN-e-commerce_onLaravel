@@ -59,12 +59,12 @@
     <div class="col-md-3 col-sm-12 col-xs-12 metodos"><i class="fas fa-money-bill"></i>Efectivo y transferencia</div>
     <div class="col-md-3 col-sm-12 col-xs-12 metodos"><i class="fas fa-shipping-fast"></i>Envíos a todo el país</div>
 </section>
-<!-- Productos -->
+Productos
     <div class="container contenedor-productos d-flex">
         <section class="col-lg-12 col-md-12 col-sm-12 col-xs-12 productos flex-wrap flex-xs-wrap" id="productos1">
             @foreach ($products as $product)
                 <article class="col-xs-12 product-card">
-                    <a href="{{ route('/productDetail/'.$product->id) }}">
+                    <a href="{{ ('/productDetail/'.$product->id) }}">
                         <div class="photo-container">
                             <img src="{{asset('storage/products/'.$product->nombre. '.jpg') }}" alt="remera">
                         </div>

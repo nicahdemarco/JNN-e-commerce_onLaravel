@@ -16,7 +16,7 @@ class CartController extends Controller
             'description' => $product->description,
             'genre' => $product->genre,
             'price' => $product->price,
-            'image' => $product->imageLoc,
+            'image' => $product->avatar,
       ];
 
        session()->put("user.cart." . $id, $product);
