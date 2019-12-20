@@ -19,7 +19,7 @@ class ProductController extends Controller {
         $productDetail = Product::find($id);
         // dd($productDetail);
 
-        return view('productDetail')->with("products", $productDetail);
+        return view('products.productDetail')->with("product", $productDetail);
     }
     public function search(Request $request) {
     
